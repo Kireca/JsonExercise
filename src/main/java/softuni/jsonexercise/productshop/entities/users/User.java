@@ -1,18 +1,17 @@
-package softuni.jsonexercise.productshop.entities;
+package softuni.jsonexercise.productshop.entities.users;
 
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
+import softuni.jsonexercise.productshop.entities.BaseEntity;
+import softuni.jsonexercise.productshop.entities.products.Product;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static softuni.jsonexercise.productshop.constants.messages.AGE_VALIDATOR;
-import static softuni.jsonexercise.productshop.constants.messages.NAME_VALIDATOR;
 
 @Getter
 @Setter
@@ -57,23 +56,7 @@ public class User extends BaseEntity {
     public User(String firstName, String lastName, int age) {
         this();
         this.firstName = firstName;
-        setLastName(lastName);
-        setAge(age);
-    }
-
-    public void setLastName(String lastName) {
-        if (!(lastName.length() < 3)) {
-            throw new IllegalArgumentException(NAME_VALIDATOR);
-        }
         this.lastName = lastName;
-    }
-
-    public void setAge(int age) {
-        if (age < 0) {
-            throw new IllegalArgumentException(AGE_VALIDATOR);
-        }
         this.age = age;
     }
-
-
 }

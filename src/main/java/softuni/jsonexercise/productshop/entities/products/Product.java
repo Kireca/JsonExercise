@@ -1,9 +1,12 @@
-package softuni.jsonexercise.productshop.entities;
+package softuni.jsonexercise.productshop.entities.products;
 
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import softuni.jsonexercise.productshop.entities.BaseEntity;
+import softuni.jsonexercise.productshop.entities.categories.Category;
+import softuni.jsonexercise.productshop.entities.users.User;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
