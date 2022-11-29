@@ -1,2 +1,4 @@
-package softuni.jsonexercise.productshop.entities.repositories;public interface CategoryRepository {
+package softuni.jsonexercise.productshop.repositories;
+
+public interface CategoryRepository {
 }
