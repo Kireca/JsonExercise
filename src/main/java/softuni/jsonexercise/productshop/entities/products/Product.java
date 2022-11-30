@@ -18,8 +18,8 @@ import static softuni.jsonexercise.productshop.constants.messages.NAME_VALIDATOR
 @Setter
 
 
-@Entity(name = "products")
-
+@Entity
+@Table(name = "products")
 public class Product extends BaseEntity {
 
 

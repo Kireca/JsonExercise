@@ -17,7 +17,8 @@ import java.util.Set;
 @Setter
 
 
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class User extends BaseEntity {
 
     @Column(name = "first_name")
@@ -33,7 +34,7 @@ public class User extends BaseEntity {
     private List<Product> sellingProducts;
 
     @OneToMany(targetEntity = Product.class, mappedBy = "buyer")
-    private List<Product> productsBought;
+    private List<Product> itemsBought;
 
 
     @ManyToMany
@@ -42,7 +43,7 @@ public class User extends BaseEntity {
 
     public User() {
         this.sellingProducts = new ArrayList<>();
-        this.productsBought = new ArrayList<>();
+        this.itemsBought = new ArrayList<>();
         this.friends = new HashSet<>();
     }
 
