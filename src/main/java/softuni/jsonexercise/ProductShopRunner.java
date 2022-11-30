@@ -37,16 +37,20 @@ public class ProductShopRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-      // this.seedService.seedAll();
-        //productsBetweenPriceWithoutBuyer();
-       // getUsersWithSoldProducts();
+        this.seedService.seedAll();
+        productsBetweenPriceWithoutBuyer();
+        getUsersWithSoldProducts();
 
 
+        getCategoryStatistics();
+
+        //END
+    }
+
+    private void getCategoryStatistics() {
         List<CategoryStats> categoryStatistics = this.productService.getCategoryStatistics();
         String json = this.gson.toJson(categoryStatistics);
         System.out.println(json);
-
-        //END
     }
 
     private void getUsersWithSoldProducts() {
